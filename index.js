@@ -61,3 +61,11 @@ function promptUser() {
       },
     ]);
   }
+
+  promptUser()
+    .then(answers => {
+        createSVG(answers);
+    })
+    .catch(error => {
+        console.error('An error occurred:', error);
+    });
