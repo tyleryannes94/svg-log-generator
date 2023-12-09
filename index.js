@@ -1,5 +1,6 @@
 const inquirer = require ('inquirer');
 const fs = require('fs');
+const path = require('path');
 
 function createSVG({ text, textColor, shape, shapeColor }) {
     let svgShape = '';
@@ -25,14 +26,16 @@ function createSVG({ text, textColor, shape, shapeColor }) {
     // Combine all SVG parts
     const svgContent = `${svgHeader}${svgShape}${svgText}${svgFooter}`;
 
+    const filePath = path.join(__dirname, 'examples', 'logo.svg');
+
     // Write the SVG content to a file
-    fs.writeFile('logo.svg', svgContent, (err) => {
-        if (err) {
-            console.error('Error writing file:', err);
-        } else {
-            console.log('Generated logo.svg');
-        }
-    });
+    fs.writeFile(filePath, svgContent, (err) => {
+      if (err) {
+          console.error('Error writing file:', err);
+      } else {
+          console.log('Generated logo.svg in examples folder');
+      }
+  });
 }
 
 function promptUser() {
