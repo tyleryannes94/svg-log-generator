@@ -1,0 +1,15 @@
+{
+  "name": "svg-log-generator",
+  "version": "1.0.0",
+  "description": "A command-line app that generates a logo based on user inputs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^9.2.12"
+  }
+}
